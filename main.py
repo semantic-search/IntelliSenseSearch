@@ -1,0 +1,21 @@
+from db_models.mongo_setup import global_init
+from db_models.models.cache_model import Cache
+import globals
+import os
+import time
+from index_task import process_index_doc
+from elasticsearch import Elasticsearch
+client = Elasticsearch('localhost:9200')
+
+global_init()
+# if not client.indices.exists(index="semantic"):
+#     print("creating_index")
+#     os.system("python3 create_index.py")
+a=time.time()
+for file in Cache.objects:
+    id = file.id
+    if file.text :
+        print(type(str(id)))
+        process_index_doc((str(id)))
+b=time.time()
+print(b-a)

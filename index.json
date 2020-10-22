@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic": "true",
+    "_source": {
+      "enabled": "true"
+    },
+    "properties": {
+      "doc_id": {
+        "type": "text"
+      },
+      "file_name": {
+
+        "type": "text"
+      },
+
+
+      "text": {
+
+        "type": "text"
+      },
+      
+
+      "text_vector": {
+        "type": "dense_vector",
+        "dims": 768
+      }
+    }
+  }
+}
+
+
