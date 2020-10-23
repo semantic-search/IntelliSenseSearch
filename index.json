@@ -22,7 +22,10 @@
 
         "type": "text"
       },
-      
+      "url": {
+
+        "type": "text"
+      },
 
       "text_vector": {
         "type": "dense_vector",
