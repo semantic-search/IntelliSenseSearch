@@ -10,7 +10,7 @@ import json
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch('localhost:9200')
+client = Elasticsearch('13.68.241.106:9200')
 
 def getVal(db_obj, key: str, error_res=""):
     try:
