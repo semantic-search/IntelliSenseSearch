@@ -9,9 +9,8 @@ from index_task import process_index_doc
 from elasticsearch import Elasticsearch
 from run_queue_worker import q
 import os
-from dotenv import load_dotenv
-load_dotenv()
-client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
+
+client = Elasticsearch(globals.ELASTIC_SEARCH_HOST)
 
 global_init()
 # if not client.indices.exists(index="semantic"):
