@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def index():
-    client = Elasticsearch(os.getenv("KAFKA_HOSTNAME"))
+    client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
     client.indices.delete(index="semantic", ignore=[404])
     with open("index.json") as index_file:
         source = index_file.read().strip()
