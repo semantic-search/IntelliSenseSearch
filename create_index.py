@@ -4,10 +4,13 @@ Example script to create elasticsearch index.
 
 
 from elasticsearch import Elasticsearch
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def index():
-    client = Elasticsearch('13.68.241.106:9200')
+    client = Elasticsearch(os.getenv("KAFKA_HOSTNAME"))
     client.indices.delete(index="semantic", ignore=[404])
     with open("index.json") as index_file:
         source = index_file.read().strip()
