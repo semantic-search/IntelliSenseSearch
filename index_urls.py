@@ -1,7 +1,5 @@
 from db_models.mongo_setup import global_init
 from db_models.models.web_model import Web
-
-from task_worker.celery import celery_app
 from bert_serving.client import BertClient
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
