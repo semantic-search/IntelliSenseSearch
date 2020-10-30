@@ -8,14 +8,11 @@ from elasticsearch.helpers import bulk
 import globals
 import json
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
+client = Elasticsearch(globals.ELASTIC_SEARCH_HOST)
 
 def getVal(db_obj, key: str, error_res=""):
     try:
