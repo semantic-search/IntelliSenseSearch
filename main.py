@@ -10,7 +10,7 @@ from elasticsearch import Elasticsearch
 from run_queue_worker import q
 import os
 
-client = Elasticsearch('13.68.241.106:9200')
+client = Elasticsearch(globals.ELASTIC_SEARCH_HOST)
 
 global_init()
 # if not client.indices.exists(index="semantic"):
