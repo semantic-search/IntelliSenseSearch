@@ -1,7 +1,6 @@
 from db_models.mongo_setup import global_init
 from db_models.models.cache_model import Cache
-from dotenv import load_dotenv
-load_dotenv()
+
 from bert_serving.client import BertClient
 from elasticsearch import Elasticsearch
 import globals
@@ -10,7 +9,7 @@ import os
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
+client = Elasticsearch(globals.ELASTIC_SEARCH_HOST)
 
 def getVal(db_obj, key: str, error_res=""):
     try:
