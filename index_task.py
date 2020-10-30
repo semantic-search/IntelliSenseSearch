@@ -10,7 +10,7 @@ import os
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch(os.getenv("KAFKA_HOSTNAME"))
+client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
 
 def getVal(db_obj, key: str, error_res=""):
     try:
