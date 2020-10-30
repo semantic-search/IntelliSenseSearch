@@ -7,10 +7,15 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 import globals
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch('13.68.241.106:9200')
+client = Elasticsearch(os.getenv("ELASTIC_SEARCH_HOST"))
 
 def getVal(db_obj, key: str, error_res=""):
     try:
