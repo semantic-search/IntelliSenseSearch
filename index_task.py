@@ -9,7 +9,7 @@ import os
 
 global_init()
 bc = BertClient(output_fmt='list')
-client = Elasticsearch(globals.ELASTIC_SEARCH_HOST)
+client = Elasticsearch('13.68.241.106:9200')
 
 def getVal(db_obj, key: str, error_res=""):
     try:
